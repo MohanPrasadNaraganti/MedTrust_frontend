@@ -1,0 +1,55 @@
+/* YourComponent.css */
+
+.custom-product-card {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .custom-card {
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .custom-card-top img {
+    width: 100%;
+    height: auto;
+  }
+  
+  .custom-card-body {
+    padding: 20px;
+  }
+  
+  .custom-product-details {
+    height: 300px;
+    overflow-y: auto;
+  }
+  
+  .custom-product-details .custom-card-title {
+    margin-top: 0;
+  }
+  
+  .custom-button-section {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+  }
+  
+  .custom-button {
+    padding: 8px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+  }
+  
+  .custom-button:hover {
+    background-color: #0056b3;
+  }
+  

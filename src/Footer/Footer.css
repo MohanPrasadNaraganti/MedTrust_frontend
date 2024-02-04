@@ -1,0 +1,10 @@
+.main-footer{
+    margin-top:5rem;
+    padding-top:2rem;
+    background-color: #581845 ;
+    color:white;
+}
+.main-footer h5{
+    text-align: center;
+}
+.main-footer p{text-align:center;}
