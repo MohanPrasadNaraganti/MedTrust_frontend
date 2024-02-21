@@ -16,7 +16,7 @@ function Product() {
   let { id } = useParams()
   const userDetails = useSelector(state => state.user);
   const cart = useSelector(state => state.cart.cart);
- 
+
   const [cartItems, setCartItems] = useState(cart);
   const [boolSearch, setBoolSearch] = useState(false)
   const [searchData, setSearchData] = useState({ name: '' })
@@ -88,7 +88,7 @@ function Product() {
         dispatch(cartAddAction(updatedCartItems));
       }
     }
-    else{
+    else {
       alert("Please Login")
     }
 
@@ -111,7 +111,14 @@ function Product() {
   return (
     <>
       <div>
-        {productdata.map((data, index) => <div key={index} style={{ display: 'inline-flex' }}> <ProductItem key={index} onAdd={onAdd} onRemove={onRemove} id={data.id} title={data.title} image={data.imageURL} content={data.content} product={data} price={data.price} /></div>)}
+
+        {productdata ? productdata.map((data, index) => <div key={index} style={{ display: 'inline-flex' }}> <ProductItem key={index} onAdd={onAdd} onRemove={onRemove} id={data.id} title={data.title} image={data.imageURL} content={data.content} product={data} price={data.price} /></div>)
+          : <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px' }}>
+            <div className="spinner-border text-success" role="status" style={{ width: '5rem', height: '5rem' }}>
+              <span className="visually-hidden">Loading...</span>
+            </div>
+          </div>
+        }
       </div>
 
     </>
