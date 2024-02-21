@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import axios from 'axios'
 
 import './CreateProduct.css'
+import API_URL from '../Util'
 
 
 const initialState = {
@@ -34,7 +35,8 @@ function CreateProduct() {
     useEffect(() => {
       const fetchCategories = async () => {
         try {
-          const data = await axios.get('http://localhost:3001/api/category')
+          // const data = await axios.get('http://localhost:3001/api/category')
+          const data = await axios.get(`${API_URL}/api/category`)
           setCategories(data.data)
   
         } catch (err) {
@@ -53,7 +55,8 @@ function CreateProduct() {
         // console.log(productdata, "creaProd")
         try {
             // console.log("axios token---",token)
-            await axios.post('http://localhost:3001/api/products', { ...productdata })
+            // await axios.post('http://localhost:3001/api/products', { ...productdata })
+            await axios.post(`${API_URL}api/products`, { ...productdata })
             alert("product created successfully!!")
             setProductData(initialState)
         } catch (error) {

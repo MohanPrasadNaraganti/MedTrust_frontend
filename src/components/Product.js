@@ -7,6 +7,7 @@ import { Link, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartAddAction } from '../actions/cartAction'
 import userReducer from '../reducers/userReducer'
+import API_URL from '../Util'
 
 
 
@@ -29,7 +30,8 @@ function Product() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const data = await axios.get('http://localhost:3001/api/products')
+        // const data = await axios.get('http://localhost:3001/api/products')
+        const data = await axios.get(`${API_URL}/api/products`)
         setProductData(data.data.products)
 
       } catch (err) {

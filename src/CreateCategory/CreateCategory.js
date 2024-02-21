@@ -2,6 +2,7 @@ import React, { useEffect, useState, useContext } from 'react'
 // import { GlobalState } from '../GlobalState'
 import axios from 'axios'
 import "./CreateCategory.css"
+import API_URL from '../Util'
 
 function CreateCategory() {
 
@@ -10,7 +11,8 @@ function CreateCategory() {
     const handleCreate = async e => {
         e.preventDefault()
         try {
-            await axios.post('http://localhost:3001/api/category', {
+            // await axios.post('http://localhost:3001/api/category', {
+            await axios.post(`${API_URL}/api/category`, {
                 name: categoryName
             })
             alert(`Created ${categoryName} Category Successfully`)

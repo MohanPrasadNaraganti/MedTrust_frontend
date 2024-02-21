@@ -10,6 +10,7 @@ import userReducer from '../reducers/userReducer';
 import { loginUser } from '../actions/loginAction';
 import cartReducer from '../reducers/cartReducer';
 import axios from 'axios';
+import API_URL from '../Util';
 
 
 
@@ -50,7 +51,7 @@ const Header = () => {
         // console.log(userDetails?.user?._id,cartItems,"logoff")
         const updateUserCart = async () => {
             try {
-                const response = await axios.patch('http://localhost:3001/user/updatecart', {
+                const response = await axios.patch(`${API_URL}/user/updatecart`, {
                     userId: userDetails?.user?._id,
                     cart: cartItems,
                 });
