@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom'
 import './cart.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartAddAction, cartRemoveAction } from '../actions/cartAction'
+import API_URL from '../Util.js'
 
 
 function Cart() {
@@ -87,7 +88,8 @@ function Cart() {
     alert(`To process your Order,you are requested to pay ${totalPrice.toFixed(2)} in payments page`)
     const addToOrders = async () => {
       try {
-        const response = await Axios.post('http://localhost:3001/api/orders', { orderId: totalPrice.toFixed(2), details: { ...userDetails, cart: cartItems } }, {
+        // const response = await Axios.post('http://localhost:3001/api/orders', { orderId: totalPrice.toFixed(2), details: { ...userDetails, cart: cartItems } }, {
+        const response = await Axios.post(`${API_URL}/api/orders`, { orderId: totalPrice.toFixed(2), details: { ...userDetails, cart: cartItems } }, {
         })
       } catch (err) {
         alert(err.response.data.msg);

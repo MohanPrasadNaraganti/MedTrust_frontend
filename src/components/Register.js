@@ -1,6 +1,7 @@
 import React, {useEffect, useState} from 'react'
 import {Link} from 'react-router-dom'
 import axios from 'axios'
+import API_URL from '../Util'
 
 function Register() {
     const [user, setUser] = useState({
@@ -16,7 +17,7 @@ function Register() {
         e.preventDefault()
         // console.log(user,"register")
         try {
-            await axios.post('http://localhost:3001/user/register', {...user})
+            await axios.post(`${API_URL}/user/register`, {...user})
 
             //localStorage.setItem('firstLogin', true)
 

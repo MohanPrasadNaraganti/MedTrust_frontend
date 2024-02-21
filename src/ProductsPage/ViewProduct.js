@@ -6,6 +6,7 @@ import Search from '../search/Search'
 import { useDispatch, useSelector } from 'react-redux'
 import cartReducer from '../reducers/cartReducer'
 import { cartAddAction } from '../actions/cartAction'
+import API_URL from '../Util'
 
 
 
@@ -35,7 +36,8 @@ function ViewProduct() {
 
     const fetchProduct = async () => {
       try {
-        const data = await axios.get(`http://localhost:3001/api/products/${id}`)
+        // const data = await axios.get(`http://localhost:3001/api/products/${id}`)
+        const data = await axios.get(`${API_URL}/api/products/${id}`)
 
         setProductDetails(data.data?.product)
 

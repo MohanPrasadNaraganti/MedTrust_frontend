@@ -1,6 +1,7 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+import API_URL from '../Util';
 
 
 const OrderHistoryTable = () => {
@@ -11,7 +12,7 @@ const OrderHistoryTable = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/orders')
+        const response = await axios.get(`${API_URL}/api/orders`)
         // console.log(response.data,"orders")
         setOrders(response.data)
 

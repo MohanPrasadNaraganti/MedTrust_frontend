@@ -9,6 +9,7 @@ import userReducer from '../reducers/userReducer'
 import { useDispatch } from 'react-redux'
 import { loginUser } from '../actions/loginAction'
 import { cartAddAction } from '../actions/cartAction'
+import API_URL from '../Util'
 
 function Login() {
     const [loggedUser, setLoggedUser] = useState("")
@@ -26,7 +27,8 @@ function Login() {
     const loginSubmit = async e => {
         e.preventDefault()
         try {
-            const data = await axios.post('http://localhost:3001/user/login', { ...user })
+            // const data = await axios.post('http://localhost:3001/user/login', { ...user })
+            const data = await axios.post(`${API_URL}/user/login`, { ...user })
             setLoggedUser(data.data.userDetails)
             // console.log(loggedUser, "login")
             dispatch(cartAddAction(data.data.userDetails.cart))
