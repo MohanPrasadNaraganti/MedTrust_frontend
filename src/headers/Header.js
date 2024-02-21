@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 import Axios from 'axios';
 import { NavLink } from "react-router-dom";
 import { FaCheck } from "react-icons/fa";
-import LogoImg from '../images/1medtrustlogo.png'
+import LogoImg from '../images/medtrust.png'
 import './Header.css'
 import { useDispatch, useSelector } from 'react-redux';
 import userReducer from '../reducers/userReducer';
@@ -69,7 +69,7 @@ const Header = () => {
             <nav className="navbar sticky-top ">
                 <div className="nav-container">
 
-                    {/* <h2><Link to="/"><img src={LogoImg} width="80px" height="80px" alt="companyLogo"/> Med Trust || Online Pharmacy </Link></h2> */}
+                    <h2><Link to="/"><img src={LogoImg} width="80px" height="80px" alt="companyLogo"/> Med Trust || Online Pharmacy </Link></h2>
                     <h2>  <NavLink exact to="/" className="nav-logo">
                         Med Trust <i style={{ color: "lightgreen" }} className="fa fa-check" aria-hidden="true"></i></NavLink> </h2>
 
