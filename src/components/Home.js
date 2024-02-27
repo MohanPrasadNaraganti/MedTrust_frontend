@@ -59,7 +59,7 @@ function Home({data}) {
                                             <div className="padding-bottom-xsmall flex-container flex-align-items-stretch flex-align-content-flex-start flex-full-width" style={{ width: '100%' }}>
                                                 <div>
                                                     <div className="align-start">
-                                                        <a href="/register" className="link button button-font-size-large button-type-tertiary" aria-label="Get started">
+                                                        <a href="/" className="link button button-font-size-large button-type-tertiary" aria-label="Get started">
                                                             Get started
                                                         </a>
                                                     </div>
@@ -166,7 +166,7 @@ function Home({data}) {
                                                 />
                                                 <div className="flex-container flex-align-items-stretch flex-align-content-flex-start flex-full-width">
                                                     <div className="align-start">
-                                                        <a href="/product" className="link button button-font-size-regular button-type-primary" aria-label="Explore all the ways to save">Explore all the ways to save</a>
+                                                        <a href="/" className="link button button-font-size-regular button-type-primary" aria-label="Explore all the ways to save">Explore all the ways to save</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -208,7 +208,7 @@ function Home({data}) {
                                                 </div>
                                                 <div className="flex-container flex-align-items-stretch flex-align-content-flex-start flex-full-width" style={{ width: '100%' }}>
                                                     <div className="align-start">
-                                                        <a href="/login" className="link button button-font-size-regular button-type-tertiary" aria-label="Sign up to add your insurance">Sign up to add your insurance</a>
+                                                        <a href="/" className="link button button-font-size-regular button-type-tertiary" aria-label="Sign up to add your insurance">Sign up to add your insurance</a>
                                                     </div>
                                                 </div>
                                             </div>
@@ -235,7 +235,7 @@ function Home({data}) {
                                                             </div>
                                                             <div className="flex-container flex-align-items-stretch flex-align-content-flex-start flex-full-width" style={{ width: '100%' }}>
                                                                 <div className="align-start">
-                                                                    <a href="/register" className="link button button-font-size-regular button-type-tertiary" aria-label="Get started">Get started</a>
+                                                                    <a href="/" className="link button button-font-size-regular button-type-tertiary" aria-label="Get started">Get started</a>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -334,7 +334,7 @@ function Home({data}) {
                                                                                             </h3>
                                                                                         </div>
                                                                                         <div className="padding-left-small padding-right-small flex-container flex-align-items-stretch flex-align-content-flex-start flex-full-width ap-container-wrap" style={{ width: '100%' }}>
-                                                                                            <div className="text align-center color-squid font-family-ember font-size-xsmall font-weight-regular links-have-text-color">It’s simple. And free, always.<br /><a href="/dashboard?ref_=sf2_hiw1">Sign in or sign up</a> to get started.</div>
+                                                                                            <div className="text align-center color-squid font-family-ember font-size-xsmall font-weight-regular links-have-text-color">It’s simple. And free, always.<br /><a href="/">Sign in or sign up</a> to get started.</div>
                                                                                         </div>
                                                                                     </div>
                                                                                     <div className="padding-left-mini padding-right-mini flex-container flex-align-items-stretch flex-align-content-flex-start" style={{ width: '33.333333333333336%' }}>
@@ -372,7 +372,7 @@ function Home({data}) {
                                                                         </div>
                                                                         <div className="flex-container flex-align-items-stretch flex-align-content-flex-start flex-full-width" style={{ width: '100%' }}>
                                                                             <div className="align-center">
-                                                                                <a href="/register" className="link button button-font-size-regular button-type-primary" aria-label="Learn more about how it works">Learn more about how it works</a>
+                                                                                <a href="/" className="link button button-font-size-regular button-type-primary" aria-label="Learn more about how it works">Learn more about how it works</a>
                                                                             </div>
                                                                         </div>
                                                                     </div>
