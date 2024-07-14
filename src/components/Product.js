@@ -111,7 +111,7 @@ function Product() {
 
       
       <div style={{display:"flex",justifyContent:"center",alignContent:"center",padding:"40px"}}>
-        {  !productdata ? productdata.map((data, index) => <div key={index} style={{ display: 'inline-flex' }}> <ProductItem key={index} onAdd={onAdd} onRemove={onRemove} id={data.id} title={data.title} image={data.imageURL} content={data.content} product={data} price={data.price} /></div>) : <Spinner animation="grow" style={{backgroundColor:"purple"}} />  }
+        {  productdata ? productdata.map((data, index) => <div key={index} style={{ display: 'inline-flex' }}> <ProductItem key={index} onAdd={onAdd} onRemove={onRemove} id={data.id} title={data.title} image={data.imageURL} content={data.content} product={data} price={data.price} /></div>) : <Spinner animation="grow" style={{backgroundColor:"purple"}} />  }
       </div>
 
     </>
