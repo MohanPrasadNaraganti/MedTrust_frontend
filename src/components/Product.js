@@ -11,7 +11,8 @@ import API_URL from '../Util'
 
 
 
-	@@ -16,7 +15,7 @@ function Product() {
+function Product() {
+
   let { id } = useParams()
   const userDetails = useSelector(state => state.user);
   const cart = useSelector(state => state.cart.cart);
@@ -19,7 +20,13 @@ import API_URL from '../Util'
   const [cartItems, setCartItems] = useState(cart);
   const [boolSearch, setBoolSearch] = useState(false)
   const [searchData, setSearchData] = useState({ name: '' })
-	@@ -30,8 +29,7 @@ function Product() {
+  const [productsobj, setProductsObj] = useState({})
+  const [productdata, setProductData] = useState([])
+  const [bool, setBool] = useState(true)
+  const firstLogin = localStorage.getItem('myData')
+
+  const dispatch = useDispatch()
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -28,7 +35,56 @@ import API_URL from '../Util'
         setProductData(data.data.products)
 
       } catch (err) {
-	@@ -88,7 +86,7 @@ function Product() {
+        alert(err.response.data.msg)
+      }
+    }
+    fetchProducts();
+
+  }, []);
+
+
+
+  const { products } = productdata;
+  const handleSearch = e => {
+    const { name, value } = e.target
+    setSearchData({ ...searchData, [name]: value })
+    //  console.log(searchData.name)
+  }
+
+  // const handleSubmit =async e=>{
+  //     e.preventDefault()
+
+  //     {productdata.map((data)=>{
+  //         if(searchData.name.toLowerCase().trimEnd()===data.title){
+
+  //             console.log(searchData,data)
+  //             setBoolSearch(true)
+  //             return  window.location.href = `/viewproduct/${data.product_id}`;
+  //         }
+  //         else{
+  //             setBool(false)
+  //             // console.log("not found")
+  //         }
+  //         })}
+  // }
+
+
+
+
+
+  const onAdd = (product) => {
+    if (firstLogin) {
+      const exist = cartItems.find((x) => x._id === product._id);
+
+      if (exist) {
+        const updatedCartItems = cartItems.map((x) =>
+          x._id === product._id ? { ...exist, qty: exist.qty + 1 } : x
+        );
+        setCartItems(updatedCartItems);
+        dispatch(cartAddAction(updatedCartItems));
+      } else {
+        const updatedCartItems = [...cartItems, { ...product, qty: 1 }];
+        setCartItems(updatedCartItems);
         dispatch(cartAddAction(updatedCartItems));
       }
     }
@@ -36,10 +92,38 @@ import API_URL from '../Util'
       alert("Please Login")
     }
 
-	@@ -110,15 +108,10 @@ function Product() {
+  };
+  const onRemove = (product) => {
+    const exist = cartItems.find((x) => x._id === product._id);
+    if (exist.qty === 1) {
+      setCartItems(cartItems.filter((x) => x._id !== product._id));
+    } else {
+      setCartItems(
+        cartItems.map((x) =>
+          x._id === product._id ? { ...exist, qty: exist.qty - 1 } : x
+        )
+      );
+    }
+  };
+
+
 
   return (
-    <>
+    // <>
+    //   <div>
+
+    //     {productdata ? productdata.map((data, index) => <div key={index} style={{ display: 'inline-flex' }}> <ProductItem key={index} onAdd={onAdd} onRemove={onRemove} id={data.id} title={data.title} image={data.imageURL} content={data.content} product={data} price={data.price} /></div>)
+    //       : <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '200px' }}>
+    //         <div className="spinner-border text-success" role="status" style={{ width: '5rem', height: '5rem' }}>
+    //           <span className="visually-hidden">Loading...</span>
+    //         </div>
+    //       </div>
+    //     }
+    //   </div>
+
+    // </>
+	<>
+    
       <div style={{display:"flex",justifyContent:"center",alignContent:"center",padding:"40px"}}>
         {  productdata ? productdata?.map((data, index) => <div key={index} style={{ display: 'inline-flex' }}> <ProductItem key={index} onAdd={onAdd} onRemove={onRemove} id={data.id} title={data.title} image={data.imageURL} content={data.content} product={data} price={data.price} /></div>) : <Spinner animation="grow" style={{backgroundColor:"purple"}} />  }
       </div>
@@ -47,5 +131,5 @@ import API_URL from '../Util'
     </>
   )
 }
+
 export default Product
-	
