@@ -22,6 +22,7 @@ function Product() {
   const [searchData, setSearchData] = useState({ name: '' })
   const [productsobj, setProductsObj] = useState({})
   const [productdata, setProductData] = useState([])
+  const [loading, setLoading] = useState(0)
   const [bool, setBool] = useState(true)
   const firstLogin = localStorage.getItem('myData')
 
@@ -39,6 +40,11 @@ function Product() {
       }
     }
     fetchProducts();
+
+	const timer = () =>{
+		setTimeout(()=> setLoading(1),60000)
+	}
+	timer();
 
   }, []);
 
@@ -125,7 +131,7 @@ function Product() {
 	<>
     
       <div style={{display:"flex",justifyContent:"center",alignContent:"center",padding:"40px"}}>
-        {  productdata ? productdata?.map((data, index) => <div key={index} style={{ display: 'inline-flex' }}> <ProductItem key={index} onAdd={onAdd} onRemove={onRemove} id={data.id} title={data.title} image={data.imageURL} content={data.content} product={data} price={data.price} /></div>) : <Spinner animation="grow" style={{backgroundColor:"purple"}} />  }
+        {  loading ? productdata?.map((data, index) => <div key={index} style={{ display: 'inline-flex' }}> <ProductItem key={index} onAdd={onAdd} onRemove={onRemove} id={data.id} title={data.title} image={data.imageURL} content={data.content} product={data} price={data.price} /></div>) : <Spinner animation="grow" style={{backgroundColor:"purple"}} />  }
       </div>
 
     </>
