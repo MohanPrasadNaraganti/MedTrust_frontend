@@ -34,7 +34,7 @@ function Product() {
         // const data = await axios.get('http://localhost:3001/api/products')
         const data = await axios.get(`${API_URL}/api/products`)
         setProductData(data.data.products)
-	setLoadng(1)
+	setLoading(1)
 
       } catch (err) {
         alert(err.response.data.msg)
