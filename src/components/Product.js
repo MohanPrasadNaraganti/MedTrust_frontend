@@ -22,7 +22,7 @@ function Product() {
   const [searchData, setSearchData] = useState({ name: '' })
   const [productsobj, setProductsObj] = useState({})
   const [productdata, setProductData] = useState([])
-  const [loading, setLoading] = useState(0)
+  const [loading, setLoading] = useState(1)
   const [bool, setBool] = useState(true)
   const firstLogin = localStorage.getItem('myData')
 
@@ -34,6 +34,7 @@ function Product() {
         // const data = await axios.get('http://localhost:3001/api/products')
         const data = await axios.get(`${API_URL}/api/products`)
         setProductData(data.data.products)
+	setLoadng(0)
 
       } catch (err) {
         alert(err.response.data.msg)
@@ -41,10 +42,10 @@ function Product() {
     }
     fetchProducts();
 
-	const timer = () =>{
-		setTimeout(()=> setLoading(1),60000)
-	}
-	timer();
+	// const timer = () =>{
+	// 	setTimeout(()=> setLoading(1),60000)
+	// }
+	// timer();
 
   }, []);
 
