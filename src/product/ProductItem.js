@@ -111,7 +111,7 @@ function ProductItem({ product, onAdd , onRemove }) {
         <div style={{ height: "500px" }}>
           <h6 className="card-title">{product.title}</h6>
           <p className="card-text"><b>Content:</b> {product.content}</p>
-          <p className="card-text"><b>Price: </b>  ₹{product.price}</p>
+          <p className="card-text"><b>Price: </b>  ${product.price}</p>
           <p className="card-text"><b>Description: </b> {product.description}</p>
         </div>
       </div>
