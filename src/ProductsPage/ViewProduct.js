@@ -95,7 +95,7 @@ function ViewProduct() {
           <div className="custom-product-details">
             <h6 className="custom-card-title">{productdetails.title}</h6>
             <p className="custom-card-text"><b>Content:</b> {productdetails.content}</p>
-            <p className="custom-card-text"><b>Price:</b> ₹{productdetails.price}</p>
+            <p className="custom-card-text"><b>Price:</b> ${productdetails.price}</p>
             <p className="custom-card-text"><b>Description:</b> {productdetails.description}</p>
           </div>
           <div className="custom-button-section">
