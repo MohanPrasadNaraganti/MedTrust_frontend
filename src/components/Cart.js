@@ -100,7 +100,7 @@ function Cart() {
       }
     };
     addToOrders();
-    // setCartItems([])
+    setCartItems([])
     // dispatch(cartAddAction([]));
     // const updateUserCart = async () => {
     //   try {
