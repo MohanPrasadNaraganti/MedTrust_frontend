@@ -48,9 +48,9 @@ function Login() {
             // alert(err.response.data.msg)
         }
     }
-    useEffect(() => {
-        console.log(loggedUser, "effect")
-    }, [loggedUser])
+    // useEffect(() => {
+    //     console.log(loggedUser, "effect")
+    // }, [loggedUser])
 
     return (
         <div className="login-page">
