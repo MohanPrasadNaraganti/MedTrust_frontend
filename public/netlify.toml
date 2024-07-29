@@ -2,7 +2,7 @@
 #   command = "npm run build"
 #   publish = "/build"
 #   base = /
-[[redirects]]
-  from = "/*"
-  tp = "index.html"
-  status = 200
+# [[redirects]]
+#   from = "/*"
+#   tp = "index.html"
+#   status = 200
