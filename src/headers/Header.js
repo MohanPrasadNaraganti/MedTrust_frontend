@@ -49,7 +49,7 @@ const Header = () => {
 
         }
 
-    }, [role, len, cart])
+    }, [role, len, cart,islogin])
 
 
     const Logout = () => {
