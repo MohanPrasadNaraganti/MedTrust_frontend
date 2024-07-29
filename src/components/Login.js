@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import './login.css'
 import Register from './Register'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useHistory } from 'react-router-dom'
 import axios from 'axios'
 import Header from '../headers/Header'
 import Userpage from './Userpage'
@@ -15,6 +15,7 @@ function Login() {
     const [loggedUser, setLoggedUser] = useState("")
     const dispatch = useDispatch();
     const location = useLocation()
+     const history = useHistory();
     const [user, setUser] = useState({
         email: '', password: ''
     })
@@ -35,7 +36,8 @@ function Login() {
             dispatch(loginUser(data.data.userDetails));
             const dataToSend = { userDetails : data.data.userDetails};
             localStorage.setItem('myData', JSON.stringify(dataToSend));
-            window.location.href = '/Userpage';
+            // window.location.href = '/userpage';
+            history.push("/userpage")
             // alert("logged in!!")
 
         } catch (err) {
