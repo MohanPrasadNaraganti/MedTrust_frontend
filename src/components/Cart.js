@@ -1,6 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import Axios from 'axios'
-import { useParams ,useHistory } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
+import { useNavigate } from 'react-router-dom';
 import './cart.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { cartAddAction, cartRemoveAction } from '../actions/cartAction'
@@ -10,7 +11,9 @@ import API_URL from '../Util.js'
 function Cart() {
 
   let { order } = useParams([])
-  const history = useHistory();
+  
+  const navigate = useNavigate();
+
   const dispatch = useDispatch()
   const cart = useSelector(state => state.cart.cart)
   const userDetails = useSelector(state => state.user)
@@ -112,7 +115,8 @@ function Cart() {
     // updateUserCart();
     // window.location.href = `/createpayment/${totalPrice.toFixed(2)}`;
     // window.location.href = `/paymentSuccessPage`;
-    history.push('/paymentSuccessPage')
+    // history.push('/paymentSuccessPage')
+    navigate('/paymentSuccessPage');
   }
 
   return (
