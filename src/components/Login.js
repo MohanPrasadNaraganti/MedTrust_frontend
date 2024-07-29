@@ -39,7 +39,7 @@ function Login() {
             dispatch(loginUser(data.data.userDetails));
             const dataToSend = { userDetails : data.data.userDetails};
             localStorage.setItem('myData', JSON.stringify(dataToSend));
-            window.location.href = '/userpage';
+            // window.location.href = '/userpage';
             // history.push("/userpage")
             navigate('/userpage');
             // alert("logged in!!")
