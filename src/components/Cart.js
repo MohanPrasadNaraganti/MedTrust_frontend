@@ -101,7 +101,7 @@ function Cart() {
     };
     addToOrders();
     setCartItems([])
-    dispatch(cartAddAction([]));
+    // dispatch(cartAddAction([]));
     // const updateUserCart = async () => {
     //   try {
     //     const response = await Axios.patch('http://localhost:3001/user/updatecart', {
